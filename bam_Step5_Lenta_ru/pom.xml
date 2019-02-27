@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bam_OSGiPractice</artifactId>
+        <groupId>bam_OSGiPractice</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>bundle</packaging>
+    <artifactId>bam_Step5_Lenta_ru</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>bam_OSGiPractice</groupId>
+            <artifactId>bam_Step5_Root</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180813</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>4.1.0</version>
+                <configuration>
+                    <instructions>
+                        <Export-Package>ru.rofleksey.osgi.step5.lenta,org.json.*</Export-Package>
+                        <Bundle-Vendor>Borisov Aleksey</Bundle-Vendor>
+                        <!--<Import-Package>!org.json,!org.jsoup,*</Import-Package>
+                        <Embed-Dependency>org.json,org.jsoup</Embed-Dependency>-->
+                        <_dsannotations>*</_dsannotations>
+                        <_metatypeannotations>*</_metatypeannotations>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
