@@ -72,7 +72,7 @@ public class NewsStatsService {
                         .map(String::toLowerCase))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         List<String> sortedList = wordMap.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue())
+                .sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
                 .limit(MAX_SIZE)
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
